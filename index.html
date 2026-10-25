@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>社内勉強会のご案内</title>
+<style>body{font-family:Meiryo,sans-serif;max-width:640px;margin:2rem auto;padding:0 1rem}li{margin:.5rem 0}</style>
+</head>
+<body>
+<h1>社内勉強会のご案内</h1>
+<ul id="events"></ul>
+<script>
+fetch("data/events.json").then(r => r.json()).then(events => {
+  const ul = document.getElementById("events");
+  events.sort((a, b) => a.date.localeCompare(b.date));
+  for (const e of events) {
+    const li = document.createElement("li");
+    li.textContent = `${e.date} ${e.title}（${e.place}・定員 ${e.capacity} 名）`;
+    ul.appendChild(li);
+  }
+});
+</script>
+</body>
+</html>
