@@ -1,0 +1,33 @@
+name: ユーザーストーリー
+description: プロダクトバックログの項目を、ユーザーストーリーと受け入れ条件で書きます
+title: "[ストーリー] "
+labels: ["story"]
+body:
+  - type: input
+    id: who
+    attributes:
+      label: だれが（〇〇として）
+      placeholder: 例）勉強会に参加したい社員として
+    validations:
+      required: true
+  - type: input
+    id: what
+    attributes:
+      label: 何をしたい（〜したい）
+      placeholder: 例）次回の勉強会の日時と場所を一目で見たい
+    validations:
+      required: true
+  - type: input
+    id: why
+    attributes:
+      label: なぜ（それは〜のため）
+      placeholder: 例）予定を空けておけるようにするため
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 受け入れ条件
+      value: |
+        - [ ] 
+        - [ ] 
+    validations:
+      required: true
